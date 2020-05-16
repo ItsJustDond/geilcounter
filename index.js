@@ -28,12 +28,13 @@ client.on('ready', async() =>{
 
 client.on('message', async (message) => {
     //let prefix = config.prefix
-
+    let geilCounter = 0;
+    let reeeCounter = 0; 
+    if(message.content === "(counter") return message.channel.send("Counters: geilcounter " + geilCounter + " reeecounter " + reeeCounter);
     let countmessage = message.content.toLowerCase();
 
     if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
-    let geilCounter = 0;
-    let reeeCounter = 0; 
+
     if(countmessage.includes("geil")){
       geilCounter++;
     } else if(countmessage.includes("reeeeeeeeeeeeeeee")){
