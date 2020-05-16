@@ -33,11 +33,7 @@ client.on('message', async (message) => {
     let dbg = require("./geilcounter.json");
     if(message.content === "(counter") message.channel.send(`Counter: \n geil: ${dbg.g} \n reee: ${dbg.r} \n xd: ${dbg.x} \n :p: ${dbg.p}`);
     let geilCounter = 0;
-    let reeeCounter = 0; 
-
-
-    if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
-
+    let reeeCounter = 0;
     if(countmessage.includes("geil")){
       
       dbg.g ++;
