@@ -51,4 +51,4 @@ client.on('message', async (message) => {
     if(commandfile) commandfile.run(client,message,args);*/
 });
 let token = config.token;
-client.login(token);
+client.login(process.env.TOKEN);
