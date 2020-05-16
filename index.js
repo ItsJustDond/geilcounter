@@ -57,6 +57,7 @@ client.on('message', async (message) => {
       });
     } else if(countmessage.includes("xd")){
       dbg.x++;
+      console.log('test lol');
       fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
         if(err) console('Je bent tt dom:', err);
       });
