@@ -34,7 +34,7 @@ client.on('message', async (message) => {
     if(message.content === "(counter") message.channel.send(`Counter: \n geil: ${dbg.g} \n reee: ${dbg.r} \n xd: ${dbg.x} \n :p: ${dbg.p}`);
     let geilCounter = 0;
     let reeeCounter = 0; 
-    if(message.content === "(counter") return message.channel.send("Counters: geilcounter " + geilCounter + " reeecounter " + reeeCounter);
+
 
     if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
 
