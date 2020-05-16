@@ -28,18 +28,38 @@ client.on('ready', async() =>{
 
 client.on('message', async (message) => {
     //let prefix = config.prefix
-
+    if(message.author.bot) return;
     let countmessage = message.content.toLowerCase();
-
-    if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
-    let geilCounter = 0;
-    let reeeCounter = 0; 
+    let dbg = require("./geilcounter.json");
+    if(message.content === "(counter") message.channel.send(`Counter: \n geil: ${dbg.g} \n reee: ${dbg.r} \n xd: ${dbg.x} \n :p: ${dbg.p}`);
+    
     if(countmessage.includes("geil")){
-      geilCounter++;
+      
+      dbg.g ++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+          if(err) console('Je bent tt dom:', err);
+      });
+
     } else if(countmessage.includes("reeeeeeeeeeeeeeee")){
-      reeeCounter++;
+      dbg.r++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
     } else if(countmessage.includes("reee")){
-      reeeCounter++;
+      dbg.r++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("xd")){
+      dbg.x++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes(":p")){
+      dbg.p++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
     }
 
     /*let messageArray = message.content.split(" ");
@@ -50,4 +70,4 @@ client.on('message', async (message) => {
     if(commandfile) commandfile.run(client,message,args);*/
 });
 let token = config.token;
-client.login(token);
+client.login(process.env.TOKEN);
