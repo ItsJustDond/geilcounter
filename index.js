@@ -32,7 +32,13 @@ client.on('message', async (message) => {
     let countmessage = message.content.toLowerCase();
     let dbg = require("./geilcounter.json");
     if(message.content === "(counter") message.channel.send(`Counter: \n geil: ${dbg.g} \n reee: ${dbg.r} \n xd: ${dbg.x} \n :p: ${dbg.p}`);
-    
+    let geilCounter = 0;
+    let reeeCounter = 0; 
+    if(message.content === "(counter") return message.channel.send("Counters: geilcounter " + geilCounter + " reeecounter " + reeeCounter);
+    let countmessage = message.content.toLowerCase();
+
+    if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
+
     if(countmessage.includes("geil")){
       
       dbg.g ++;
@@ -69,5 +75,4 @@ client.on('message', async (message) => {
     let commandfile = client.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(client,message,args);*/
 });
-let token = config.token;
 client.login(process.env.TOKEN);
