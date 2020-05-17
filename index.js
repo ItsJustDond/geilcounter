@@ -50,11 +50,7 @@ client.on('message', async (message) => {
 
       message.channel.send(embed);
     }
-    let geilCounter = 0;
-    let reeeCounter = 0; 
-
-    if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
-
+    
     if(countmessage.includes("geil")){
       
       dbg.g ++;
