@@ -31,9 +31,31 @@ client.on('message', async (message) => {
     if(message.author.bot) return;
     let countmessage = message.content.toLowerCase();
     let dbg = require("./geilcounter.json");
-    if(message.content === "(counter") message.channel.send(`Counter: \n geil: ${dbg.g} \n reee: ${dbg.r} \n xd: ${dbg.x} \n :p: ${dbg.p}`);
+    if(message.content === "(counter") {
+      let embed = new Discord.RichEmbed()
+      .setTitle("**Counter!**")
+      .setTimestamp()
+      .setColor("GREEN")
+      .addField("**Geil**:", dbg.g)
+      .addField("**reee**:", dbg.r)
+      .addField("**xd**:", dbg.x)
+      .addField("**:p**:", dbg.p)
+      .addField("**uwu**:", dbg.u)
+      .addField("**eans**:", dbg.eans)
+      .addField("**lol**:", dbg.lol)
+      .addField("**lmao**:", dbg.lmao)
+      .addField("**huh**:", dbg.huh)
+      .addField("**ziek**:", dbg.ziek);
+
+      message.channel.send(embed);
+    }
     let geilCounter = 0;
-    let reeeCounter = 0;
+    let reeeCounter = 0; 
+    if(message.content === "(counter") return message.channel.send("Counters: geilcounter " + geilCounter + " reeecounter " + reeeCounter);
+    let countmessage = message.content.toLowerCase();
+
+    if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
+
     if(countmessage.includes("geil")){
       
       dbg.g ++;
@@ -53,7 +75,6 @@ client.on('message', async (message) => {
       });
     } else if(countmessage.includes("xd")){
       dbg.x++;
-      console.log('test lol');
       fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
         if(err) console('Je bent tt dom:', err);
       });
@@ -62,7 +83,42 @@ client.on('message', async (message) => {
       fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
         if(err) console('Je bent tt dom:', err);
       });
-    }
+    } else if(countmessage.includes("uwu")){
+      dbg.u++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("eans")){
+      dbg.eans++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("lol")){
+      dbg.lol++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("lmao")){
+      dbg.lmao++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("lmfao")){
+      dbg.lmao++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("huh")){
+      dbg.huh++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } else if(countmessage.includes("ziek")){
+      dbg.ziek++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
+    } 
 
     /*let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
