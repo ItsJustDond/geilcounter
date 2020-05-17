@@ -45,7 +45,8 @@ client.on('message', async (message) => {
       .addField("**lol**:", dbg.lol)
       .addField("**lmao**:", dbg.lmao)
       .addField("**huh**:", dbg.huh)
-      .addField("**ziek**:", dbg.ziek);
+      .addField("**ziek**:", dbg.ziek)
+      .addField("**eng**:", dbg.eng);
 
       message.channel.send(embed);
     }
