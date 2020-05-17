@@ -116,6 +116,11 @@ client.on('message', async (message) => {
       fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
         if(err) console('Je bent tt dom:', err);
       });
+    } else if(countmessage.includes("eng")){
+      dbg.eng++;
+      fs.writeFile('./geilcounter.json', JSON.stringify(dbg), (err) => {
+        if(err) console('Je bent tt dom:', err);
+      });
     } 
 
     /*let messageArray = message.content.split(" ");
