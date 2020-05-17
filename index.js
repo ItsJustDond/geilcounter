@@ -51,7 +51,6 @@ client.on('message', async (message) => {
     }
     let geilCounter = 0;
     let reeeCounter = 0; 
-    if(message.content === "(counter") return message.channel.send("Counters: geilcounter " + geilCounter + " reeecounter " + reeeCounter);
 
     if(!countmessage.includes("geil") || !countmessage.includes("rEeEeEeEeEeEeEeEe")) return;
 
